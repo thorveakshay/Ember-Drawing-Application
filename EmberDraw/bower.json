@@ -1,0 +1,8 @@
+{
+  "name": "ember-draw",
+  "dependencies": {
+    "ember": "~2.4.3",
+    "ember-cli-test-loader": "0.2.2",
+    "ember-qunit-notifications": "0.1.0"
+  }
+}

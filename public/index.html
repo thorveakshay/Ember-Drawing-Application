@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Htmlcanvas</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.css" type="text/css"> 
+<meta name="ember-draw/config/environment" content="%7B%22modulePrefix%22%3A%22ember-draw%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22ember-draw%22%2C%22version%22%3A%220.0.0+361cc2a2%22%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU= sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" >
+  <link rel="stylesheet" href="/assets/htmlcanvas.css"> 
+</head>
+
+<body>
+  
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      sessionStorage.Username = googleUser.getBasicProfile().getName();
+      window.location.href = "canvas";
+    }
+
+    function onFailure(error) {
+      console.log(error);
+    }
+
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'center': true,
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="assets/vendor-b2279b0d65752fdcc56ad5cbfadce4b6.js" integrity="sha256-g9HERdBQsZoTgYULv69rjliMMm34cHo0SItpEVMaUTs= sha512-UVZvKquvpRiyWltHhuW8FOSq94TsojzbC8OobfPL8PdV3s5bid9SIQA5KODUnw3LeqfxygBqiHmCF32kvbvnpQ==" ></script>
+  <script src="assets/ember-draw-67f10eed60532cd83bda2d0af8b81b09.js" integrity="sha256-ROXxAfJmPZtiMAK42o4Byv7szGKGI+63lzPt1GxfaFE= sha512-r29oiN1mUsixKaR4sia1AX61xA9Me/shC0QpdNbiHoefSveJA9GDoIt644rqVV919Zn4Tm14OejHj6OKzysBoA==" ></script>
+  <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+
+
+  
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="105931437230-qfupqtur0164acb2rflrb5jvg0j0tjo6.apps.googleusercontent.com">
+
+</body>
+
+</html>
